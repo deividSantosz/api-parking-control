@@ -7,4 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.UUID;
 @Repository
 public interface ParkingSpotRepository extends JpaRepository<ParkingSpotEntity, UUID> {
+    public boolean existsByLicensePlateCar(String licensePlateCar);
+    public boolean existsByParkingSpotNumber(String parkingSpotNumber);
+    public boolean existsByApartmentAndBlock (String apartment, String block);
 }
