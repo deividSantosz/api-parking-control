@@ -48,20 +48,6 @@ public class ParkingSpotService {
          repository.delete(parkingSpotEntity);
     }
 
-    @Transactional
-    public ParkingSpotEntity update(UUID id, ParkingSpotDTO obj) {
-        ParkingSpotEntity entity = repository.getReferenceById(id);
-        updateData(entity, obj);
-        return repository.save(entity);
-    }
-    private void updateData(ParkingSpotEntity entity, ParkingSpotDTO obj) {
-        entity.setParkingSpotNumber(obj.getParkingSpotNumber());
-        entity.setLicensePlateCar(obj.getLicensePlateCar());
-        entity.setApartment(obj.getApartment());
-        entity.setBrandCar(obj.getBrandCar());
-        entity.setModelCar(obj.getModelCar());
-        entity.setResponsibleName(obj.getResponsibleName());
-        entity.setBlock(obj.getBlock());
-        entity.setColorCar(obj.getColorCar());
-    }
+
+
 }
